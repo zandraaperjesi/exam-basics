@@ -39,12 +39,14 @@ public class Copy {
     try {
       buffer = Files.readAllLines(filePath);
     } catch (IOException e) {
+      System.out.println("Couldn't open source file!");
       e.printStackTrace();
     }
 
     try {
       Files.write(outputPath, buffer);
     } catch (IOException e) {
+      System.out.println("Couldn't create a new file!");
       e.printStackTrace();
     }
   }

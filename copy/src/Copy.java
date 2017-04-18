@@ -24,8 +24,8 @@ public class Copy {
     }
     else if (args.length == 2) {
       readWriteFile(args[0], args[1]);
-      System.out.println("File copied");
     }
+    //adding default case, that is identical to no arguments provided, as problem asked for handling that case in specific
     else {
       System.out.println("Usage : copy [source] [destination]");
     }

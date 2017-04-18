@@ -7,15 +7,18 @@ public class OddAvg {
     // Create basic unit tests for it with at least 3 different test cases
   }
 
-  public double oddAverage (List<Double> averageOf) {
+  public int oddAverage (List<Integer> averageOf) {
     int counter = 0;
-    double sum = 0;
-    for (double num : averageOf) {
+    int sum = 0;
+    for (int num : averageOf) {
       if (num % 2 == 1) {
         counter += 1;
         sum += num;
       }
     }
-    return sum / counter;
+    if (sum != 0) {
+      return sum / counter;
+    }
+    else return 0;
   }
 }

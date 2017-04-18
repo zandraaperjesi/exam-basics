@@ -36,15 +36,18 @@ The application is accepted if:
 
 #### Your answer:
 [add your answer here]   
-1:   
-2:   
-3:   
-4:   
-5:   
-6:   
-7:   
-8:   
+1:   signature
+2:   return type
+3:   method name
+4:   argument type
+5:   argument variable
+6:   local variable
+7:   method body
+8:   return statement
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
 [add your answer here]
+The constructor is a code in class that initializes an object. When creating a new instance of an object, the constructor is called by saying "new" before the object type.
+If a constructor is not provided when implementing a class, Java generates a default constructor.
+A constructor can also make the object be able to take arguments.

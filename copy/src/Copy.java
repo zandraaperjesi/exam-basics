@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Copy {
+  static List<String> buffer = new ArrayList<>();
   public static void main(String[] args) {
     // This should be the basic replica of the 'cp' command
     // If ran from the command line without arguments
@@ -23,7 +24,8 @@ public class Copy {
       System.out.println("No destination provided");
     }
     else if (args.length == 2) {
-      readWriteFile(args[0], args[1]);
+      readFile(args[0]);
+      writeFile(args[1]);
     }
     //adding default case, that is identical to no arguments provided, as problem asked for handling that case in specific
     else {
@@ -31,18 +33,18 @@ public class Copy {
     }
   }
 
-  public static void readWriteFile(String originalPath, String copyPath) {
+  public static void readFile(String originalPath) {
     Path filePath = Paths.get(originalPath);
-    Path outputPath = Paths.get(copyPath);
-    List<String> buffer = new ArrayList<>();
-
     try {
       buffer = Files.readAllLines(filePath);
     } catch (IOException e) {
       System.out.println("Couldn't open source file!");
       e.printStackTrace();
     }
+  }
 
+  public static void writeFile(String copyPath) {
+    Path outputPath = Paths.get(copyPath);
     try {
       Files.write(outputPath, buffer);
     } catch (IOException e) {

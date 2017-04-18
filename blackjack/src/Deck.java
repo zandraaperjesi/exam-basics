@@ -13,10 +13,6 @@ public class Deck {
     this.shuffle();
   }
 
-  public Deck() {
-    cardsInDeck = new ArrayList<>();
-  }
-
   public void countColors(List<Card> cardsToCount) {
     int[] colorBuffer = {0, 0, 0, 0};
     for(Card c : cardsToCount) {

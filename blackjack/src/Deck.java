@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Deck {
@@ -6,7 +7,11 @@ public class Deck {
   List<Card> cardsInDeck;
 
   public Deck(int numberOfCards) {
+    cardsInDeck = new ArrayList<>();
+  }
 
+  public Deck() {
+    cardsInDeck = new ArrayList<>();
   }
 
   public void fillDeck(int numberOfCards) {
@@ -14,5 +19,15 @@ public class Deck {
     for (int i = 0; i < numberOfCards; i++) {
       cardsInDeck.add(new Card(colors[i % 4], values[i / 4]));
     }
+  }
+
+  public void shuffle() {
+    List<Card> buffer = new ArrayList<>();
+    while(cardsInDeck.size() > 0) {
+      int pick = (int) (Math.random() * cardsInDeck.size());
+      buffer.add(cardsInDeck.get(pick));
+      cardsInDeck.remove(pick);
+    }
+    cardsInDeck = buffer;
   }
 }

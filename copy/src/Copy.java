@@ -23,15 +23,19 @@ public class Copy {
       System.out.println("No destination provided");
     }
     else if (args.length == 2) {
-
+      readWriteFile(args[0], args[1]);
+      System.out.println("File copied");
+    }
+    else {
+      System.out.println("Usage : copy [source] [destination]");
     }
   }
 
-  public void readFile(String originalPath, String copyPath) {
+  public static void readWriteFile(String originalPath, String copyPath) {
     Path filePath = Paths.get(originalPath);
     Path outputPath = Paths.get(copyPath);
     List<String> buffer = new ArrayList<>();
-    
+
     try {
       buffer = Files.readAllLines(filePath);
     } catch (IOException e) {
